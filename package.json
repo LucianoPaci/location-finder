@@ -1,0 +1,29 @@
+{
+  "name": "full-stack-take-home-assignment-pywsag",
+  "version": "1.0.0",
+  "description": "Thank you for your interest in working at Railz as a member of the Engineering Team!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local:server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://railz-jregik@git.codesubmit.io/railz/full-stack-take-home-assignment-pywsag"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0"
+  }
+}
