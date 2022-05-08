@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local:server": "nodemon server.js"
+    "local:server": "nodemon server.js",
+    "local:client": "cd ./client && npm start",
+    "local": "concurrently \"npm run local:server\" \"npm run local:client\"",
+    "install": "cd ./client && npm i && cd .. npm i"
   },
   "repository": {
     "type": "git",
@@ -16,7 +19,8 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.4",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "concurrently": "^5.3.0"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.3.13",
