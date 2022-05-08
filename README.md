@@ -55,7 +55,7 @@ It is our aim to create a React application that allows users to search for an a
     - **Validation:** If any input params are not passed in, return a 400 status code with the appropriate error message
     - **Output:**  If validation passes, returns 200 status code with the following fields: longitude, latitude, elevation, time zone (IANA String ID)
 
-**GOOGLE API KEY:** *AIzaSyDXUdyViVOAzBkr6hpsvL249_HH8hjpr_s*
+**GOOGLE API KEY:** <Get your api key from Google Console>
 
 ### Solution
 The challenge can be solved in different ways, which is why the solution requirements are ambiguous.
