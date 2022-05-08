@@ -3,10 +3,10 @@
 const Router = require('koa-router')
 const router = new Router()
 
-router.get('/status', async (ctx) => {
-  ctx.body = {
-    status: 'OK',
-  }
-})
+const apiController = require('../controllers')
+
+router.get('/status', apiController.getStatus)
+
+router.post('/location', apiController.getLocation)
 
 module.exports = router
