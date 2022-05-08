@@ -1,3 +1,23 @@
+
+# Node.js & React Apps
+
+Server app uses Koa.js (lightweight alternative to Express.js)
+
+Client App uses React.js
+
+**How to run it:** 
+
+```bash
+npm run local
+```
+
+### TODOS: 
+- Implementation of Context API (instead of Redux) to handle response from API and display the Map
+
+
+---
+
+
 Thank you for your interest in working at Railz as a member of the Engineering Team!
 
 In this challenge, we hope to gain a better understanding of how you approach technical problems and how you might implement solutions. In addition, it helps us to determine your comfort level with the technologies we use.
