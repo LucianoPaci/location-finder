@@ -5,6 +5,11 @@ Server app uses Koa.js (lightweight alternative to Express.js)
 
 Client App uses React.js
 
+**How to install it:** 
+
+```bash
+npm run install
+```
 **How to run it:** 
 
 ```bash
