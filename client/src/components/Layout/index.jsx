@@ -4,10 +4,7 @@ import { Outlet } from 'react-router-dom'
 function Layout() {
   return (
     <LayoutWrapper>
-      <Box
-        component={'main'}
-        sx={{ flexGrow: 1, p: 3, border: '1px solid green' }}
-      >
+      <Box component={'main'} sx={{ flexGrow: 1, p: 3 }}>
         <Outlet />
       </Box>
     </LayoutWrapper>
