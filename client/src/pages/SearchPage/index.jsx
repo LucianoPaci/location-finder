@@ -1,9 +1,12 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import { Button, Grid } from '@mui/material'
-import { Formik, Form, Field } from 'formik'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import CircularProgress from '@mui/material/CircularProgress'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import { TextField } from 'formik-mui'
+import * as yup from 'yup'
 import Api from '../../utils/api'
 function SearchPage() {
   const navigate = useNavigate()
@@ -17,6 +20,29 @@ function SearchPage() {
     country: '',
     postalCode: '',
   }
+
+  const validationSchema = yup.object({
+    address: yup
+      .string('Enter an address')
+      .required('Address is required')
+      .max(100, 'Max: 100 characters allowed'),
+    city: yup
+      .string('Enter a city')
+      .required('City is required')
+      .max(100, 'Max: 100 characters allowed'),
+    province: yup
+      .string('Enter a province')
+      .required('Province is required')
+      .max(100, 'Max: 100 characters allowed'),
+    country: yup
+      .string('Enter a Country')
+      .required('Country is required')
+      .max(100, 'Max: 100 characters allowed'),
+    postalCode: yup
+      .string('Enter a Postal Code')
+      .required('Postal Code is required')
+      .max(100, 'Max: 100 characters allowed'),
+  })
 
   async function handleSubmit(values) {
     const { address, city, province, country, postalCode } = values
@@ -41,8 +67,9 @@ function SearchPage() {
     <Formik
       initialValues={initialValues}
       onSubmit={async (values) => await handleSubmit(values)}
+      validationSchema={validationSchema}
     >
-      {({ values }) => (
+      {({ isSubmitting }) => (
         <Form>
           <Grid container spacing={2} p={3}>
             <Grid item xs={6}>
@@ -59,6 +86,7 @@ function SearchPage() {
                     name="address"
                     placeholder="Street Address"
                   />
+                  <ErrorMessage name="address" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Field
@@ -66,6 +94,7 @@ function SearchPage() {
                     name="city"
                     placeholder="City"
                   />
+                  <ErrorMessage name="city" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Field
@@ -73,6 +102,7 @@ function SearchPage() {
                     name="province"
                     placeholder="Province"
                   />
+                  <ErrorMessage name="province" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={8}>
                   <Field
@@ -80,6 +110,7 @@ function SearchPage() {
                     name="country"
                     placeholder="Country"
                   />
+                  <ErrorMessage name="country" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <Field
@@ -87,19 +118,24 @@ function SearchPage() {
                     name="postalCode"
                     placeholder="Postal Code"
                   />
+                  <ErrorMessage name="postalCode" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={8}>
                   <Box />
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <Box sx={{ margin: 4 }}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      sx={{ background: 'green' }}
-                    >
-                      Search
-                    </Button>
+                    {isSubmitting ? (
+                      <CircularProgress size={20} />
+                    ) : (
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        sx={{ background: 'green' }}
+                      >
+                        Search
+                      </Button>
+                    )}
                   </Box>
                 </Grid>
               </Grid>
