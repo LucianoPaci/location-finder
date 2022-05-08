@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import CircularProgress from '@mui/material/CircularProgress'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form, Field } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import { TextField } from 'formik-mui'
 import * as yup from 'yup'
@@ -86,7 +86,6 @@ function SearchPage() {
                     name="address"
                     placeholder="Street Address"
                   />
-                  <ErrorMessage name="address" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Field
@@ -94,7 +93,6 @@ function SearchPage() {
                     name="city"
                     placeholder="City"
                   />
-                  <ErrorMessage name="city" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Field
@@ -102,7 +100,6 @@ function SearchPage() {
                     name="province"
                     placeholder="Province"
                   />
-                  <ErrorMessage name="province" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={8}>
                   <Field
@@ -110,7 +107,6 @@ function SearchPage() {
                     name="country"
                     placeholder="Country"
                   />
-                  <ErrorMessage name="country" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <Field
@@ -118,7 +114,6 @@ function SearchPage() {
                     name="postalCode"
                     placeholder="Postal Code"
                   />
-                  <ErrorMessage name="postalCode" component={'p'} />
                 </Grid>
                 <Grid item xs={12} md={8}>
                   <Box />
